@@ -1,5 +1,5 @@
 <template>
-  <div class="welcome">
+  <div>
     <h1>Dutch Blitz scoring app</h1>
   </div>
 </template>

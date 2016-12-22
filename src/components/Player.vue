@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <input v-model="player.name">
-    <button v-on:click="$emit('removePlayer')">Remove</button>
+  <div class="box">
+    {{player.name}}
   </div>
 </template>
 
@@ -13,4 +12,9 @@ export default {
 </script>
 
 <style scoped>
+.box {
+  border: 1px solid #2c3e50;
+  margin: 10px;
+  padding: 20px;
+}
 </style>

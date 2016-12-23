@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="box" v-on:click="details">
     {{player.name}}
   </div>
 </template>
@@ -7,7 +7,12 @@
 <script>
 export default {
   name: 'player',
-  props: ['player']
+  props: ['player', 'index'],
+  methods: {
+    details: function () {
+      this.$router.push('player/' + this.index)
+    }
+  }
 }
 </script>
 

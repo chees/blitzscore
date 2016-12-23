@@ -14,7 +14,7 @@ new Vue({
     routes: [
       { path: '/', component: Home },
       { path: '/overview', component: Overview },
-      { path: '/player/:id', component: PlayerDetails }
+      { path: '/player/:index', component: PlayerDetails }
     ]
   })
 }).$mount('#app')

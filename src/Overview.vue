@@ -1,6 +1,10 @@
 <template>
   <div>
-    <player v-for="player in players" v-bind:player="player"></player>
+    <player
+      v-for="(player, index) in players"
+      v-bind:player="player"
+      v-bind:index="index"
+    ></player>
   </div>
 </template>
 
@@ -18,11 +22,10 @@ export default {
     }
   },
   created () {
-    const players = JSON.parse(window.localStorage.getItem('players'))
-    if (!players) {
-      this.$router.replace('./')
+    this.players = JSON.parse(window.localStorage.getItem('players'))
+    if (!this.players) {
+      return this.$router.replace('./')
     }
-    this.players = players
   }
 }
 </script>

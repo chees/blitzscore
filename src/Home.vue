@@ -25,7 +25,9 @@ export default {
   },
   data () {
     return {
-      players: [{name: 'Player 1'}, {name: 'Player 2'}]
+      players: [
+        {name: 'Player 1', rounds: [{}]},
+        {name: 'Player 2', rounds: [{}]}]
     }
   },
   computed: {
@@ -35,7 +37,7 @@ export default {
   },
   methods: {
     addPlayer: function () {
-      this.players.push({name: ''})
+      this.players.push({name: '', rounds: [{}]})
     },
     start: function () {
       // TODO filter out players without a name

@@ -1,9 +1,10 @@
 <template>
-  <div class="box" v-on:click="details">
-    {{player.name}}: {{total}}
-    <div>
-      Blitz: {{lastBlitz}}
-      Dutch: {{lastDutch}}
+  <div class="player" v-on:click="details">
+    <div class="name">{{player.name}}</div>
+    <div class="total">{{total}}</div>
+    <div class="status">
+      <span>Blitz: {{lastBlitz}}</span>
+      <span>Dutch: {{lastDutch}}</span>
     </div>
   </div>
 </template>
@@ -34,9 +35,36 @@ export default {
 </script>
 
 <style scoped>
-.box {
+.player {
   border: 1px solid #2c3e50;
   margin: 10px 0;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+}
+.player:active {
+  background-color: #ddd;
+}
+.name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.total {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #2c3e50;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-bottom-left-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+}
+.status {
+  display: flex;
+}
+.status span {
+  width: 50%;
 }
 </style>

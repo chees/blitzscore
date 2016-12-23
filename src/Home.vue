@@ -69,12 +69,23 @@ header {
   box-sizing: border-box;
 }
 header * {
+  width: 33%;
   padding: 10px;
+}
+header span {
+  text-align: center;
+}
+header :last-child {
+  text-align: right;
 }
 header a {
   color: white;
   text-decoration: none;
   background-color: rgba(255, 255, 255, .1);
+}
+header a:active {
+  background-color: white;
+  color: #2c3e50;
 }
 main {
   padding-top: 62px;
@@ -82,16 +93,6 @@ main {
 input {
   -webkit-appearance: none;
   border-radius: 3px;
-  /*
-  border: 0;
-  xborder-top: 1px solid #2c3e50;
-  xborder-bottom: 1px solid #2c3e50;
-  xborder-bottom: 1px solid #eee;
-  xborder-left: 1px solid #2c3e50;
-  xborder-right: 1px solid #2c3e50;
-  border-left: 1px solid #eee;
-  border-right: 1px solid #eee;
-  */
   border: 1px solid #ddd;
   background-color: #fafafa;
   font-size: 16px;
@@ -109,6 +110,10 @@ button {
   padding: 6px 10px;
   background-color: #2c3e50;
   color: white;
+}
+button:active {
+  background-color: white;
+  color: #2c3e50;
 }
 </style>
 <style scoped>

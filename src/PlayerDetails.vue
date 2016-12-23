@@ -73,16 +73,6 @@ export default {
 </script>
 
 <style scoped>
-header * {
-  /* flex-grow: 1; */
-  width: 33%;
-}
-header span {
-  text-align: center;
-}
-header :last-child {
-  text-align: right;
-}
 table {
   width: 100%;
   padding: 10px;

@@ -1,10 +1,16 @@
 <template>
-  <div class="overview">
-    <player
-      v-for="(player, index) in players"
-      v-bind:player="player"
-      v-bind:index="index"
-    ></player>
+  <div>
+    <header>
+      <router-link to="./">&lsaquo; quit</router-link>
+      <span>Round {{round}}</span><span></span>
+    </header>
+    <main>
+      <player
+        v-for="(player, index) in players"
+        v-bind:player="player"
+        v-bind:index="index"
+      ></player>
+    </main>
   </div>
 </template>
 
@@ -31,6 +37,11 @@ export default {
       this.addNewRound()
     }
   },
+  computed: {
+    round: function () {
+      return this.players[0].rounds.length
+    }
+  },
   methods: {
     needsNewRound: function () {
       return this.players.filter(p => {
@@ -49,7 +60,9 @@ export default {
 </script>
 
 <style scoped>
-.overview {
-  padding: 10px;
+main {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 </style>

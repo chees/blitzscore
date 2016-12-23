@@ -75,7 +75,6 @@ export default {
 <style scoped>
 table {
   width: 100%;
-  padding: 10px;
 }
 th {
   border-bottom: 1px solid #2c3e50;

@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .player {
   border: 1px solid #2c3e50;
-  margin: 10px 0;
+  margin-bottom: 10px;
   padding: 10px;
   border-radius: 3px;
   position: relative;

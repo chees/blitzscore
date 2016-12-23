@@ -1,26 +1,29 @@
 <template>
-  <div class="home">
-    <!--<img src="./assets/logo.png">-->
-    <welcome></welcome>
-    <div
-      is="setup-player"
-      v-for="(player, index) in players"
-      v-bind:player="player"
-      v-on:removePlayer="players.splice(index, 1)">
-    </div>
-    <button v-on:click="addPlayer" class="add">Add a player</button>
-    <button v-on:click="start" v-bind:disabled="!canStart" class="start">Start</button>
+  <div>
+    <header>
+      <span>Dutch Blitz scoring app</span>
+    </header>
+    <main>
+      <!--<img src="./assets/logo.png">-->
+      <div
+        is="setup-player"
+        v-for="(player, index) in players"
+        v-bind:player="player"
+        v-on:removePlayer="players.splice(index, 1)">
+      </div>
+      <button v-on:click="addPlayer" class="add">Add a player</button>
+      <button v-on:click="start" v-bind:disabled="!canStart" class="start">Start</button>
+    </main>
   </div>
 </template>
 
 <script>
-import Welcome from './components/Welcome'
 import SetupPlayer from './components/SetupPlayer'
 
 export default {
   name: 'home',
   components: {
-    Welcome, SetupPlayer
+    SetupPlayer
   },
   data () {
     return {
@@ -48,6 +51,14 @@ export default {
 </script>
 
 <style>
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  /* TODO
+  user-select: none;
+  -{prefix}-user-select: none;
+  -webkit-touch-callout: none;
+  */
+}
 body {
   margin: 0;
   padding: 0;
@@ -66,6 +77,7 @@ header {
   display: flex;
   position: fixed;
   width: 100%;
+  height: 62px;
   box-sizing: border-box;
 }
 header * {
@@ -88,7 +100,7 @@ header a:active {
   color: #2c3e50;
 }
 main {
-  padding-top: 62px;
+  padding: 72px 10px 10px 10px;
 }
 input {
   -webkit-appearance: none;
@@ -117,8 +129,9 @@ button:active {
 }
 </style>
 <style scoped>
-.home {
-  padding: 10px;
+header span {
+  width: 100%;
+  text-align: center;
 }
 .add {
   margin: 10px 0 20px;

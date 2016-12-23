@@ -51,6 +51,7 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  overflow-y: hidden; /* To prevent android pull to reload */
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -63,6 +64,9 @@ header {
   padding: 10px;
   font-weight: bold;
   display: flex;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
 }
 header * {
   padding: 10px;
@@ -71,6 +75,9 @@ header a {
   color: white;
   text-decoration: none;
   background-color: rgba(255, 255, 255, .1);
+}
+main {
+  padding-top: 62px;
 }
 input {
   -webkit-appearance: none;

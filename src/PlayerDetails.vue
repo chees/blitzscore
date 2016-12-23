@@ -2,23 +2,25 @@
   <div>
     <header>
       <router-link to="../overview">&lsaquo; overview</router-link>
-      <span>{{player.name}}</span><span> </span><!--<router-link to="0">next &rsaquo;</router-link>-->
+      <span>{{player.name}}</span><a @click="next">next &rsaquo;</a>
     </header>
-    <table>
-      <tr><th>Blitz</th><th>* -2</th><th>Dutch</th><th>Total</th></tr>
-      <tr v-for="round in player.rounds">
-        <td><input type="number" v-model="round.blitz" v-on:input="save"></td>
-        <td>{{round | minusBlitz}}</td>
-        <td><input type="number" v-model="round.dutch" v-on:input="save"></td>
-        <td>{{round | roundTotal}}</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>{{total}}</td>
-      </tr>
-    </table>
+    <main>
+      <table>
+        <tr><th>Blitz</th><th>* -2</th><th>Dutch</th><th>Total</th></tr>
+        <tr v-for="round in player.rounds">
+          <td><input type="number" v-model="round.blitz" v-on:input="save"></td>
+          <td>{{round | minusBlitz}}</td>
+          <td><input type="number" v-model="round.dutch" v-on:input="save"></td>
+          <td>{{round | roundTotal}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{total}}</td>
+        </tr>
+      </table>
+    </main>
   </div>
 </template>
 
@@ -52,6 +54,9 @@ export default {
       this.total = this.player.rounds.reduce(function (acc, round) {
         return acc + (round.blitz || 0) * -2 + (round.dutch || 0)
       }, 0) || 0
+    },
+    next: function () {
+      this.$router.replace('' + (Number.parseInt(this.$route.params.index, 10) + 1) % this.players.length)
     }
   },
   filters: {

@@ -48,7 +48,8 @@ export default {
   },
   filters: {
     minusBlitz: function (round) {
-      return round.blitz * -2 || ''
+      const n = round.blitz * -2
+      return isNaN(n) ? '' : n
     },
     roundTotal: function (round) {
       const total = round.blitz * -2 + round.dutch

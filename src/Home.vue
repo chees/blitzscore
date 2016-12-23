@@ -2,15 +2,14 @@
   <div>
     <!--<img src="./assets/logo.png">-->
     <welcome></welcome>
-    Players
     <div
       is="setup-player"
       v-for="(player, index) in players"
       v-bind:player="player"
       v-on:removePlayer="players.splice(index, 1)">
     </div>
-    <button v-on:click="addPlayer">Add a player</button>
-    <button v-on:click="start" v-bind:disabled="!canStart">Start</button>
+    <button v-on:click="addPlayer" class="add">Add a player</button>
+    <button v-on:click="start" v-bind:disabled="!canStart" class="start">Start</button>
   </div>
 </template>
 
@@ -51,13 +50,39 @@ export default {
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
+  font-size: 16px;
   color: #2c3e50;
+  padding: 20px;
 }
 input {
-  border: 1px solid #2c3e50;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border: 0;
+  border-bottom: 1px solid #2c3e50;
+  font-size: 16px;
+  padding: 4px;
+}
+input:focus {
+  outline: none;
+  background-color: #eee;
 }
 button {
+  outline: none;
   border: 1px solid #2c3e50;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 3px 10px;
+  background-color: #2c3e50;
+  color: white;
+}
+</style>
+<style scoped>
+.add {
+  margin: 10px 0 20px;
+}
+.start {
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
 }
 </style>

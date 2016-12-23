@@ -11,3 +11,9 @@ export default {
   props: ['player']
 }
 </script>
+
+<style scoped>
+div {
+  margin-bottom: 10px;
+}
+</style>

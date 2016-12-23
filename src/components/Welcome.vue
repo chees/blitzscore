@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Dutch Blitz scoring app</h1>
+    <h1>Dutch Blitz scoring</h1>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
 
 <style scoped>
 h1 {
-  font-weight: normal;
+  text-align: center;
+  margin: 0 0 20px;
 }
 </style>

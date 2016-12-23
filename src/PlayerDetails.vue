@@ -1,7 +1,9 @@
 <template>
   <div>
-    <router-link to="../overview">&lt; Overview</router-link>
-    {{player.name}}: {{total}}
+    <header>
+      <router-link to="../overview">&lsaquo; overview</router-link>
+      <span>{{player.name}}</span><span> </span><!--<router-link to="0">next &rsaquo;</router-link>-->
+    </header>
     <table>
       <tr><th>Blitz</th><th>* -2</th><th>Dutch</th><th>Total</th></tr>
       <tr v-for="round in player.rounds">
@@ -9,6 +11,12 @@
         <td>{{round | minusBlitz}}</td>
         <td><input type="number" v-model="round.dutch" v-on:input="save"></td>
         <td>{{round | roundTotal}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{total}}</td>
       </tr>
     </table>
   </div>
@@ -60,10 +68,34 @@ export default {
 </script>
 
 <style scoped>
+header * {
+  /* flex-grow: 1; */
+  width: 33%;
+}
+header span {
+  text-align: center;
+}
+header :last-child {
+  text-align: right;
+}
 table {
-  width: 100%
+  width: 100%;
+  padding: 10px;
 }
 th {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #2c3e50;
+  min-width: 30px;
+}
+td {
+  text-align: right;
+}
+td input {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: right;
+}
+tr:last-child td:last-child {
+  border-top: 1px solid #2c3e50;
+  font-weight: bold;
 }
 </style>

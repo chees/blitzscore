@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overview">
     <player
       v-for="(player, index) in players"
       v-bind:player="player"
@@ -47,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.overview {
+  padding: 10px;
+}
+</style>

@@ -15,5 +15,11 @@ export default {
 <style scoped>
 div {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  flex-grow: 1;
+  margin-right: 10px;
 }
 </style>

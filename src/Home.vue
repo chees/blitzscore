@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <!--<img src="./assets/logo.png">-->
     <welcome></welcome>
     <div
@@ -48,19 +48,47 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #2c3e50;
-  padding: 20px;
+}
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+}
+header * {
+  padding: 10px;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, .1);
 }
 input {
   -webkit-appearance: none;
   border-radius: 3px;
+  /*
   border: 0;
-  border-bottom: 1px solid #2c3e50;
+  xborder-top: 1px solid #2c3e50;
+  xborder-bottom: 1px solid #2c3e50;
+  xborder-bottom: 1px solid #eee;
+  xborder-left: 1px solid #2c3e50;
+  xborder-right: 1px solid #2c3e50;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  */
+  border: 1px solid #ddd;
+  background-color: #fafafa;
   font-size: 16px;
-  padding: 4px;
+  padding: 6px;
 }
 input:focus {
   outline: none;
@@ -71,12 +99,15 @@ button {
   border: 1px solid #2c3e50;
   border-radius: 3px;
   font-size: 16px;
-  padding: 3px 10px;
+  padding: 6px 10px;
   background-color: #2c3e50;
   color: white;
 }
 </style>
 <style scoped>
+.home {
+  padding: 10px;
+}
 .add {
   margin: 10px 0 20px;
 }

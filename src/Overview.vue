@@ -26,6 +26,24 @@ export default {
     if (!this.players) {
       return this.$router.replace('./')
     }
+
+    if (this.needsNewRound()) {
+      this.addNewRound()
+    }
+  },
+  methods: {
+    needsNewRound: function () {
+      return this.players.filter(p => {
+        const lastRound = p.rounds[p.rounds.length - 1]
+        return !Number.isInteger(lastRound.blitz) || !Number.isInteger(lastRound.dutch)
+      }).length === 0
+    },
+    addNewRound: function () {
+      for (const p of this.players) {
+        p.rounds.push({})
+      }
+      window.localStorage.setItem('players', JSON.stringify(this.players))
+    }
   }
 }
 </script>

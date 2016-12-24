@@ -28,8 +28,8 @@ npm test
 ## TODO
 - home screen should show player names from previous time
 - overview screen should hide blitz and dutch scores when they are not set yet
-
 - overview screen should highlight the highest score
+
 - show a message when the round is finished
 - show a message when the game is finished (with option to restart)
 - next button in player details should turn into a done button when all scores for the round are entered

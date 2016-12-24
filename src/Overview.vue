@@ -9,6 +9,7 @@
         v-for="(player, index) in players"
         v-bind:player="player"
         v-bind:index="index"
+        v-bind:players="players"
       ></player>
     </main>
   </div>

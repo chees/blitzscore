@@ -68,6 +68,8 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #2c3e50;
+  max-width: 768px;
+  margin: 0 auto;
 }
 header {
   background-color: #2c3e50;
@@ -79,6 +81,8 @@ header {
   width: 100%;
   height: 62px;
   box-sizing: border-box;
+  max-width: 768px;
+  margin: 0 auto;
 }
 header * {
   width: 33%;

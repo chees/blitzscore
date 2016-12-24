@@ -131,6 +131,9 @@ button:active {
   background-color: white;
   color: #2c3e50;
 }
+button:disabled {
+  opacity: .9;
+}
 </style>
 <style scoped>
 header span {

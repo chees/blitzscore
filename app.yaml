@@ -1,0 +1,15 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+default_expiration: "1h"
+
+handlers:
+- url: /static
+  static_dir: static
+  secure: always
+- url: /
+  static_files: index.html
+  upload: index.html
+  expiration: "1m"
+  secure: always

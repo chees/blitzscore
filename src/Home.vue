@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <span>Dutch Blitz scoring app</span>
+      <span>Dutch Blitz Scorekeeper</span>
     </header>
     <main>
       <!--<img src="./assets/logo.png">-->

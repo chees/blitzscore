@@ -1,12 +1,12 @@
 {
-  "name": "Dutch Blitz scoring",
-  "short_name": "Dutch Blitz scoring",
+  "name": "Dutch Blitz Scorekeeper",
+  "short_name": "Dutch Blitz Scorekeeper",
   "icons": [{
     "src": "/static/card-192.png",
     "sizes": "192x192",
     "type": "image/png"
   }],
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "OLDbackground_color": "#3E4EB8",
   "OLDtheme_color": "#2F3BA2",

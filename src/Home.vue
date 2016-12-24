@@ -26,10 +26,11 @@ export default {
     SetupPlayer
   },
   data () {
+    let players = JSON.parse(window.localStorage.getItem('players'))
+    if (!players) players = [{name: 'Player 1'}, {name: 'Player 2'}]
+    players.forEach(p => { p.rounds = [{}] })
     return {
-      players: [
-        {name: 'Player 1', rounds: [{}]},
-        {name: 'Player 2', rounds: [{}]}]
+      players: players
     }
   },
   computed: {
@@ -42,8 +43,7 @@ export default {
       this.players.push({name: '', rounds: [{}]})
     },
     start: function () {
-      // TODO filter out players without a name
-      window.localStorage.setItem('players', JSON.stringify(this.players))
+      window.localStorage.setItem('players', JSON.stringify(this.players.filter(p => p.name)))
       this.$router.push('overview')
     }
   }

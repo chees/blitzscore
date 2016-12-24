@@ -24,3 +24,23 @@ npm test
 # deploy
 ./deploy.sh
 ```
+
+## TODO
+- home screen should show player names from previous time
+
+- show a message when the round is finished
+- show a message when the game is finished (with option to restart)
+- overview screen should hide blitz and dutch scores when they are not set yet
+- overview screen should highlight the highest score
+- next button in player details should turn into a done button when all scores for the round are entered
+- animations
+- put user-select: none; on relevant elements
+- home screen should have info about what the app is and how it works
+- fix position fixed in iOS
+- fix overscroll in iOS
+- wrap in Android app for store
+- wrap in iOS app for store
+- nicer design and colors
+- promote the app
+- get a domain name?
+- check how to handle copyrighted stuff?

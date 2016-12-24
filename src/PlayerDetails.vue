@@ -82,6 +82,7 @@ th {
 }
 td {
   text-align: right;
+  padding: 4px 0;
 }
 td input {
   box-sizing: border-box;

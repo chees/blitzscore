@@ -112,7 +112,7 @@ input {
   border: 1px solid #ddd;
   background-color: #fafafa;
   font-size: 16px;
-  padding: 6px;
+  padding: 8px;
 }
 input:focus {
   outline: none;
@@ -123,7 +123,7 @@ button {
   border: 1px solid #2c3e50;
   border-radius: 3px;
   font-size: 16px;
-  padding: 6px 10px;
+  padding: 8px 10px;
   background-color: #2c3e50;
   color: white;
 }

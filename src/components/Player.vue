@@ -3,8 +3,8 @@
     <div class="name">{{player.name}}</div>
     <div class="total">{{total}}</div>
     <div class="status">
-      <span>Blitz: {{lastBlitz}}</span>
-      <span>Dutch: {{lastDutch}}</span>
+      <span v-bind:class="{ invisible: blitzInvisible }">Blitz: {{lastBlitz}}</span>
+      <span v-bind:class="{ invisible: dutchInvisible }">Dutch: {{lastDutch}}</span>
     </div>
   </div>
 </template>
@@ -24,6 +24,12 @@ export default {
     },
     lastDutch: function () {
       return this.player.rounds[this.player.rounds.length - 1].dutch
+    },
+    blitzInvisible: function () {
+      return !Number.isInteger(this.lastBlitz)
+    },
+    dutchInvisible: function () {
+      return !Number.isInteger(this.lastDutch)
     }
   },
   methods: {
@@ -66,5 +72,8 @@ export default {
 }
 .status span {
   width: 50%;
+}
+.invisible {
+  visibility: hidden;
 }
 </style>
